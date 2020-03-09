@@ -24,7 +24,7 @@ class App extends Component {
           <h1>Google Book Search</h1>
         </header>
         <SearchForm onSearch={results => this.setSearchResults(results)} />
-        <SearchResults />
+        <SearchResults results={this.state.searchResults} />
       </div>
     );
   }
