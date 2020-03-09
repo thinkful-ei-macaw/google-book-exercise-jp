@@ -1,0 +1,19 @@
+.result-item {
+  border-bottom: 1px solid gray;
+}
+
+.result-item h2 {
+  text-align: center;
+}
+
+.result-item img {
+  margin-right: 16px;
+}
+
+.details {
+  display: inline-block;
+}
+
+.result-item button {
+  margin-bottom: 8px;
+}

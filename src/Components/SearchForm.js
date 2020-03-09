@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './SearchForm.css';
 
 class SearchForm extends Component {
   constructor(props) {
@@ -62,7 +63,7 @@ class SearchForm extends Component {
 
   render() {
     return (
-      <form onSubmit={e => this.handleSubmit(e)}>
+      <form className="search-form" onSubmit={e => this.handleSubmit(e)}>
         {this.state.error ? <div>{this.state.error}</div> : null}
         <label htmlFor="search">Search:</label>
         <input
@@ -71,27 +72,31 @@ class SearchForm extends Component {
           id="search"
           placeholder="Enter search here..."
         />
-        <input type="submit"></input>
-        <select
-          onChange={e => this.printTypeChanged(e.target.value)}
-          name="print-type"
-          id="print-type"
-        >
-          <option value="all">All</option>
-          <option value="books">Books</option>
-          <option value="magazines">Magazines</option>
-        </select>
-        <select
-          onChange={e => this.bookTypeChanged(e.target.value)}
-          name="book-type"
-          id="book-type"
-        >
-          <option value="">No Filter</option>
-          <option value="full">Full text viewable</option>
-          <option value="free-ebooks">Free e-book</option>
-          <option value="paid-ebooks">Paid e-book</option>
-          <option value="ebooks">All e-book</option>
-        </select>
+        <button type="submit">Search</button>
+        <div>
+          <label htmlFor="print-type">Print Type:</label>
+          <select
+            onChange={e => this.printTypeChanged(e.target.value)}
+            name="print-type"
+            id="print-type"
+          >
+            <option value="all">All</option>
+            <option value="books">Books</option>
+            <option value="magazines">Magazines</option>
+          </select>
+          <label htmlFor="book-type">Book Type:</label>
+          <select
+            onChange={e => this.bookTypeChanged(e.target.value)}
+            name="book-type"
+            id="book-type"
+          >
+            <option value="">No Filter</option>
+            <option value="full">Full text viewable</option>
+            <option value="free-ebooks">Free e-book</option>
+            <option value="paid-ebooks">Paid e-book</option>
+            <option value="ebooks">All e-book</option>
+          </select>
+        </div>
       </form>
     );
   }

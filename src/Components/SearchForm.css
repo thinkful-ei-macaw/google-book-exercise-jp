@@ -1,0 +1,13 @@
+.search-form input,
+.search-form select {
+  margin-right: 8px;
+  padding: 8px;
+}
+
+.search-form label {
+  margin-right: 8px;
+}
+
+.search-form div {
+  margin-top: 8px;
+}

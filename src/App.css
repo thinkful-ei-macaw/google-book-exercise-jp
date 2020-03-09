@@ -1,0 +1,29 @@
+.App {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 2fr, 2fr, auto;
+  grid-template-areas:
+    'header header header header'
+    '...... search search .......'
+    'results results results results';
+}
+
+.App-header {
+  grid-area: header;
+  justify-self: center;
+}
+
+.search-form {
+  grid-area: search;
+  justify-self: center;
+}
+
+.results-list {
+  grid-area: results;
+}
+
+button {
+  padding: 8px;
+  font-family: sans-serif;
+  text-transform: uppercase;
+}

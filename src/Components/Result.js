@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Result.css';
 
 class Result extends Component {
   constructor(props) {
@@ -16,20 +17,25 @@ class Result extends Component {
 
   render() {
     return (
-      <li>
-        <h1>{this.props.title}</h1>
+      <li className="result-item">
+        <h2>{this.props.title}</h2>
         <img src={this.props.imageUrl} alt="book cover" />
-        <p>Author: {this.props.author}</p>
-        <p>
-          Price:
-          {this.props.saleInfo.saleability === 'FOR_SALE'
-            ? ' $' + this.props.saleInfo.listPrice.amount
-            : ' Not for sale'}
-        </p>
-        <button type="button" onClick={() => this.toggleShowDetails()}>
-          Show Details
-        </button>
-        {this.state.showDetails ? <p>{this.props.desc}</p> : null}
+        <div className="details">
+          <p>
+            Author:{' '}
+            {this.props.author ? this.props.author[0] : 'No info available'}
+          </p>
+          <p>
+            Price:
+            {this.props.saleInfo.saleability === 'FOR_SALE'
+              ? ' $' + this.props.saleInfo.listPrice.amount
+              : ' Not for sale'}
+          </p>
+          <button type="button" onClick={() => this.toggleShowDetails()}>
+            Show Details
+          </button>
+          {this.state.showDetails ? <p>{this.props.desc}</p> : null}
+        </div>
       </li>
     );
   }
